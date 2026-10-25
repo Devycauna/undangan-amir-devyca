@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Amir & Devyca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#6b1d2f',
+                        'burgundy-dark': '#4a121f',
+                        rustic: '#8c6d53',
+                        'rustic-dark': '#5c4535',
+                        cream: '#fcf8f2',
+                        'cream-paper': '#f4ece1',
+                        gold: '#d4af37'
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #2b1d16;
+            color: #4a3b32;
+            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .rustic-bg {
+            background-color: #fcf8f2;
+            background-image: radial-gradient(#8c6d53 0.5px, transparent 0.5px), radial-gradient(#8c6d53 0.5px, #fcf8f2 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+
+        .envelope-wrapper {
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4ece1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6b1d2f;
+            border-radius: 4px;
+        }
+
+        .vintage-border {
+            border: 2px solid #8c6d53;
+            outline: 1px solid #8c6d53;
+            outline-offset: 4px;
+        }
+
+        .vintage-box {
+            background: rgba(252, 248, 242, 0.95);
+            box-shadow: 0 10px 30px rgba(74, 18, 31, 0.15);
+        }
+
+        .music-btn {
+            animation: spin 8s linear infinite;
+        }
+        .music-btn.paused {
+            animation-play-state: paused;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-burgundy selection:text-white">
+    <button id="audioToggleBtn" onclick="toggleAudio()" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-burgundy text-cream rounded-full shadow-2xl flex items-center justify-center border-2 border-gold cursor-pointer hidden transition-transform hover:scale-110">
+        <i id="audioIcon" class="fa-solid fa-music text-lg music-btn paused"></i>
+    </button>
+
+    <div id="coverOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-[#2b1d16] p-4">
+        <div class="absolute top-0 left-0 p-4 opacity-70 pointer-events-none">
+            <svg width="120" height="120" viewBox="0 0 100 100" fill="#6b1d2f">
+                <path d="M0,0 C30,0 50,20 50,50 C20,50 0,30 0,0 Z"/>
+                <circle cx="20" cy="20" r="8" fill="#8c6d53"/>
+            </svg>
+        </div>
+        <div class="absolute bottom-0 right-0 p-4 opacity-70 pointer-events-none transform rotate-180">
+            <svg width="120" height="120" viewBox="0 0 100 100" fill="#6b1d2f">
+                <path d="M0,0 C30,0 50,20 50,50 C20,50 0,30 0,0 Z"/>
+                <circle cx="20" cy="20" r="8" fill="#8c6d53"/>
+            </svg>
+        </div>
+
+        <div class="envelope-wrapper max-w-md w-full bg-cream-paper rounded-2xl p-8 text-center border-4 border-rustic shadow-2xl relative overflow-hidden my-auto">
+            <div class="text-rustic opacity-40 text-xs tracking-widest uppercase mb-2 font-semibold">Undangan Pernikahan</div>
+            <div class="w-24 h-24 mx-auto mb-4 text-burgundy flex items-center justify-center">
+                <svg viewBox="0 0 100 100" class="w-full h-full fill-current">
+                    <path d="M50 10 A40 40 0 0 1 90 50 A40 40 0 0 1 50 90 A40 40 0 0 1 10 50 A40 40 0 0 1 50 10 Z" fill="none" stroke="#8c6d53" stroke-width="2" stroke-dasharray="4 2"/>
+                    <text x="50" y="55" font-family="Great Vibes" font-size="35" text-anchor="middle" fill="#6b1d2f">A & D</text>
+                </svg>
+            </div>
+
+            <h1 class="font-cursive text-4xl sm:text-5xl text-burgundy mb-2">Amir & Devyca</h1>
+            <p class="text-sm text-rustic font-medium tracking-wide uppercase mb-6">Sabtu, 07 November 2026</p>
+
+            <div class="my-6 p-4 bg-cream/80 rounded-xl border border-rustic/30">
+                <p class="text-xs text-rustic-dark mb-1">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <p id="guestName" class="font-serif font-bold text-lg text-burgundy">Tamu Undangan</p>
+                <p class="text-[11px] text-rustic-dark italic mt-1">Di Tempat</p>
+            </div>
+
+            <button onclick="openInvitation()" class="w-full py-3.5 px-6 bg-burgundy hover:bg-burgundy-dark text-cream font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 border border-gold group">
+                <i class="fa-solid fa-envelope-open transition-transform group-hover:scale-110"></i>
+                <span class="tracking-wide">Buka Amplop & Undangan</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="mainContent" class="max-w-xl mx-auto min-h-screen rustic-bg shadow-2xl relative border-x border-rustic/20">
+        <section class="min-h-screen flex flex-col items-center justify-between text-center p-8 relative overflow-hidden py-16">
+            <div class="w-full max-w-xs opacity-80">
+                <svg viewBox="0 0 300 80" class="w-full">
+                    <path d="M 150 40 Q 110 10 70 40 Q 30 70 0 40 Q 70 20 150 40 Q 230 20 300 40 Q 270 70 230 40 Q 190 10 150 40 Z" fill="#6b1d2f" opacity="0.15"/>
+                    <circle cx="150" cy="40" r="15" fill="#6b1d2f"/>
+                    <circle cx="150" cy="40" r="10" fill="#d4af37"/>
+                    <path d="M 120 40 C 130 20, 140 20, 150 40 C 160 20, 170 20, 180 40" stroke="#8c6d53" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+
+            <div class="reveal-element my-auto space-y-4">
+                <p class="font-serif text-xs uppercase tracking-[0.3em] text-rustic">Walimatul 'Ursy</p>
+                <h2 class="font-cursive text-5xl sm:text-6xl text-burgundy font-bold">Ahmad & Devyca</h2>
+                <p class="font-serif text-sm text-rustic-dark tracking-widest uppercase">07 . 11 . 2026</p>
+            </div>
+
+            <div class="reveal-element animate-bounce text-rustic flex flex-col items-center gap-2">
+                <span class="text-[10px] uppercase tracking-widest">Gulir Ke Bawah</span>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+            </div>
+        </section>
+
+        <section class="p-8 text-center relative border-t border-rustic/10">
+            <div class="reveal-element vintage-box p-8 rounded-2xl vintage-border relative">
+                <i class="fa-solid fa-quote-left text-3xl text-burgundy/20 absolute top-4 left-4"></i>
+                <i class="fa-solid fa-quote-right text-3xl text-burgundy/20 absolute bottom-4 right-4"></i>
+
+                <p class="font-serif text-xl sm:text-2xl text-burgundy mb-4 leading-relaxed dir-rtl" style="font-family: 'Amiri', serif;">
+                    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+                </p>
+                <p class="text-xs sm:text-sm text-rustic-dark italic leading-relaxed mb-4">
+                    "Dan di antara tanda-tanda (kebesaran-Nya) ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+                </p>
+                <span class="font-serif font-semibold text-xs text-burgundy tracking-widest uppercase block">— QS. Ar-Rum: 21</span>
+            </div>
+        </section>
+
+        <section class="p-8 space-y-12">
+            <div class="text-center reveal-element">
+                <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider mb-2">Mempelai Pria & Wanita</h3>
+                <p class="text-xs text-rustic italic">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:</p>
+            </div>
+
+            <div class="reveal-element vintage-box p-6 rounded-2xl border border-rustic/30 text-center relative overflow-hidden">
+                <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-rustic-dark/10 border-2 border-rustic flex items-center justify-center text-burgundy shadow-inner">
+                    <svg class="w-14 h-14 fill-current text-burgundy" viewBox="0 0 24 24">
+                        <path d="M12,2A3,3 0 0,1 15,5V7H9V5A3,3 0 0,1 12,2M6,8H18A2,2 0 0,1 20,10V21A1,1 0 0,1 19,22H5A1,1 0 0,1 4,21V10A2,2 0 0,1 6,8M12,9L9.5,13.5L12,14.5L14.5,13.5L12,9M12,16L10,20H14L12,16Z"/>
+                    </svg>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-burgundy mb-1">Ahmad Amirulloh</h4>
+                <p class="text-sm font-semibold text-rustic mb-3">( Amir )</p>
+                <div class="text-xs text-rustic-dark space-y-1 leading-relaxed border-t border-rustic/20 pt-3">
+                    <p class="font-medium text-burgundy-dark">Anak Kedua dari:</p>
+                    <p>Alm. Bapak <span class="font-semibold">Amiruddin</span></p>
+                    <p>&</p>
+                    <p>Almrh. Ibu <span class="font-semibold">Nunung Kurniasih</span></p>
+                </div>
+            </div>
+
+            <div class="text-center reveal-element">
+                <span class="font-cursive text-5xl text-burgundy">&</span>
+            </div>
+
+            <div class="reveal-element vintage-box p-6 rounded-2xl border border-rustic/30 text-center relative overflow-hidden">
+                <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-burgundy/10 border-2 border-rustic flex items-center justify-center text-burgundy shadow-inner">
+                    <svg class="w-14 h-14 fill-current text-burgundy" viewBox="0 0 24 24">
+                        <path d="M12,2L9,7H15L12,2M8,8L4,21H20L16,8H8M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10Z"/>
+                    </svg>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-burgundy mb-1">Devyca Aurel Nabila Kautsar</h4>
+                <p class="text-sm font-semibold text-rustic mb-3">( Devyca )</p>
+                <div class="text-xs text-rustic-dark space-y-1 leading-relaxed border-t border-rustic/20 pt-3">
+                    <p class="font-medium text-burgundy-dark">Anak Pertama dari:</p>
+                    <p>Bapak <span class="font-semibold">Dedy Indra Kusumah</span></p>
+                    <p>&</p>
+                    <p>Ibu <span class="font-semibold">Nur Indah Dewi Sisca Sari</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-8 text-center bg-burgundy text-cream relative">
+            <div class="reveal-element space-y-6">
+                <h3 class="font-serif text-xl sm:text-2xl uppercase tracking-widest text-gold font-semibold">Menghitung Hari</h3>
+                <p class="text-xs text-cream/80 max-w-xs mx-auto">Menuju Hari Bahagia Akad & Resepsi Pernikahan Kami</p>
+
+                <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-sm mx-auto">
+                    <div class="bg-burgundy-dark/80 p-3 rounded-xl border border-gold/30 shadow-md">
+                        <span id="cd-days" class="font-serif text-2xl sm:text-3xl font-bold text-gold">00</span>
+                        <span class="block text-[10px] uppercase tracking-wider text-cream/70 mt-1">Hari</span>
+                    </div>
+                    <div class="bg-burgundy-dark/80 p-3 rounded-xl border border-gold/30 shadow-md">
+                        <span id="cd-hours" class="font-serif text-2xl sm:text-3xl font-bold text-gold">00</span>
+                        <span class="block text-[10px] uppercase tracking-wider text-cream/70 mt-1">Jam</span>
+                    </div>
+                    <div class="bg-burgundy-dark/80 p-3 rounded-xl border border-gold/30 shadow-md">
+                        <span id="cd-minutes" class="font-serif text-2xl sm:text-3xl font-bold text-gold">00</span>
+                        <span class="block text-[10px] uppercase tracking-wider text-cream/70 mt-1">Menit</span>
+                    </div>
+                    <div class="bg-burgundy-dark/80 p-3 rounded-xl border border-gold/30 shadow-md">
+                        <span id="cd-seconds" class="font-serif text-2xl sm:text-3xl font-bold text-gold">00</span>
+                        <span class="block text-[10px] uppercase tracking-wider text-cream/70 mt-1">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-8 space-y-8">
+            <div class="text-center reveal-element">
+                <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider mb-2">Rangkaian Acara</h3>
+                <p class="text-xs text-rustic">InsyaAllah acara pernikahan akan dilaksanakan pada:</p>
+            </div>
+
+            <div class="reveal-element vintage-box p-6 rounded-2xl border-l-4 border-l-burgundy border-rustic/30 space-y-4">
+                <div class="flex items-center space-x-3 text-burgundy">
+                    <i class="fa-solid fa-ring text-xl"></i>
+                    <h4 class="font-serif text-lg font-bold uppercase tracking-wider">Akad Nikah</h4>
+                </div>
+                <div class="text-xs text-rustic-dark space-y-2 border-t border-rustic/10 pt-3">
+                    <p class="font-semibold text-burgundy text-sm"><i class="fa-regular fa-calendar-check me-2"></i>Sabtu, 07 November 2026</p>
+                    <p><i class="fa-regular fa-clock me-2"></i>Pukul 08.00 WIB</p>
+                    <p><i class="fa-solid fa-location-dot me-2"></i><strong>KUA Babelan</strong></p>
+                    <p class="text-rustic pl-6">Jl. Pasar Babelan, Kec. Babelan, Kab. Bekasi</p>
+                </div>
+            </div>
+
+            <div class="reveal-element vintage-box p-6 rounded-2xl border-l-4 border-l-rustic border-rustic/30 space-y-4">
+                <div class="flex items-center space-x-3 text-burgundy">
+                    <i class="fa-solid fa-glass-water-droplet text-xl"></i>
+                    <h4 class="font-serif text-lg font-bold uppercase tracking-wider">Tasyakuran & Resepsi</h4>
+                </div>
+                <div class="text-xs text-rustic-dark space-y-2 border-t border-rustic/10 pt-3">
+                    <p class="font-semibold text-burgundy text-sm"><i class="fa-regular fa-calendar-check me-2"></i>Sabtu, 07 November 2026</p>
+                    <p><i class="fa-regular fa-clock me-2"></i>Jam Tasyakuran Pukul 10.00 WIB - Selesai</p>
+                    <p><i class="fa-solid fa-house-chimney me-2"></i><strong>Kediaman Mempelai Wanita</strong></p>
+                </div>
+            </div>
+
+            <div class="reveal-element text-center space-y-4 pt-2">
+                <a href="https://maps.app.goo.gl/DGwh3BAMGpE4SM2R8?g_st=ic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-burgundy hover:bg-burgundy-dark text-cream rounded-xl shadow-md transition-all font-medium text-sm border border-gold">
+                    <i class="fa-solid fa-map-location-dot text-lg text-gold"></i>
+                    <span>Buka Peta Lokasi (Google Maps)</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="p-8 space-y-6 border-t border-rustic/10">
+            <div class="text-center reveal-element space-y-2">
+                <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider">Amplop Digital</h3>
+                <p class="text-xs text-rustic max-w-xs mx-auto">Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberi hadiah, kami menyediakan Amplop Digital:</p>
+            </div>
+
+            <div class="reveal-element vintage-box p-6 rounded-2xl border border-rustic/30 relative">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-bold font-serif text-xl tracking-wider text-burgundy">BCA</span>
+                    <i class="fa-solid fa-credit-card text-rustic text-2xl"></i>
+                </div>
+                <p class="text-xs text-rustic-dark font-medium">Nomor Rekening:</p>
+                <div class="flex items-center justify-between mt-1 bg-cream p-3 rounded-lg border border-rustic/20">
+                    <span id="bcaNo" class="font-mono text-base font-bold text-burgundy-dark tracking-wider">7635217880</span>
+                    <button onclick="copyToClipboard('7635217880', 'BCA')" class="text-xs bg-burgundy hover:bg-burgundy-dark text-cream px-3 py-1.5 rounded-md transition-colors flex items-center gap-1">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                </div>
+                <p class="text-xs text-rustic mt-2">a.n <span class="font-semibold text-burgundy">Devyca Aurel Nabila Kauts</span></p>
+            </div>
+
+            <div class="reveal-element vintage-box p-6 rounded-2xl border border-rustic/30 relative">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-bold font-serif text-xl tracking-wider text-burgundy">BSI</span>
+                    <i class="fa-solid fa-building-columns text-rustic text-2xl"></i>
+                </div>
+                <p class="text-xs text-rustic-dark font-medium">Nomor Rekening:</p>
+                <div class="flex items-center justify-between mt-1 bg-cream p-3 rounded-lg border border-rustic/20">
+                    <span id="bsiNo" class="font-mono text-base font-bold text-burgundy-dark tracking-wider">7182999819</span>
+                    <button onclick="copyToClipboard('7182999819', 'BSI')" class="text-xs bg-burgundy hover:bg-burgundy-dark text-cream px-3 py-1.5 rounded-md transition-colors flex items-center gap-1">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                </div>
+                <p class="text-xs text-rustic mt-2">a.n <span class="font-semibold text-burgundy">Devyca Aurel Nabila Kautsar</span></p>
+            </div>
+        </section>
+
+        <section class="p-8 space-y-6 border-t border-rustic/10">
+            <div class="text-center reveal-element space-y-2">
+                <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider">Doa & Ucapan</h3>
+                <p class="text-xs text-rustic">Tuliskan doa dan ucapan hangat untuk kedua mempelai</p>
+            </div>
+
+            <form id="wishForm" onsubmit="submitWish(event)" class="reveal-element vintage-box p-6 rounded-2xl border border-rustic/30 space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-rustic-dark uppercase mb-1">Nama Anda</label>
+                    <input type="text" id="senderName" required placeholder="Masukkan nama Anda" class="w-full text-xs p-3 rounded-xl border border-rustic/30 bg-cream focus:outline-none focus:border-burgundy">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-rustic-dark uppercase mb-1">Kehadiran</label>
+                    <select id="attendance" class="w-full text-xs p-3 rounded-xl border border-rustic/30 bg-cream focus:outline-none focus:border-burgundy">
+                        <option value="Hadir">Hadir</option>
+                        <option value="Masih Ragu">Masih Ragu</option>
+                        <option value="Tidak Hadir">Tidak Hadir</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-rustic-dark uppercase mb-1">Doa & Ucapan</label>
+                    <textarea id="wishMessage" rows="3" required placeholder="Tuliskan ucapan selamat & doa..." class="w-full text-xs p-3 rounded-xl border border-rustic/30 bg-cream focus:outline-none focus:border-burgundy"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-burgundy hover:bg-burgundy-dark text-cream text-xs font-semibold uppercase tracking-wider rounded-xl transition-all shadow-md">
+                    Kirim Ucapan
+                </button>
+            </form>
+
+            <div class="reveal-element space-y-3">
+                <h4 class="text-xs font-serif font-bold uppercase text-rustic tracking-wider mb-2">Daftar Ucapan & Doa (<span id="wishCount">3</span>)</h4>
+                <div id="wishesContainer" class="space-y-3 max-h-80 overflow-y-auto pr-1">
+                    <div class="vintage-box p-4 rounded-xl border border-rustic/20 text-xs space-y-1">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-burgundy">Sisca & Keluarga</span>
+                            <span class="bg-rustic/20 text-rustic-dark px-2 py-0.5 rounded text-[10px]">Hadir</span>
+                        </div>
+                        <p class="text-rustic-dark italic">"Selamat ya Amir & Devyca! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin."</p>
+                    </div>
+                    <div class="vintage-box p-4 rounded-xl border border-rustic/20 text-xs space-y-1">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-burgundy">Budi Santoso</span>
+                            <span class="bg-rustic/20 text-rustic-dark px-2 py-0.5 rounded text-[10px]">Hadir</span>
+                        </div>
+                        <p class="text-rustic-dark italic">"Selamat menempuh hidup baru. Semoga lancar sampai hari H!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="p-8 text-center text-xs text-rustic space-y-2 border-t border-rustic/20 bg-cream-paper">
+            <p class="font-cursive text-3xl text-burgundy">Amir & Devyca</p>
+            <p class="text-[10px] uppercase tracking-widest text-rustic-dark">Terima Kasih Atas Doa & Restu Anda</p>
+            <p class="text-[9px] text-rustic opacity-60 pt-4">© 2026 Digital Wedding Invitation</p>
+        </footer>
+    </div>
+
+    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 bg-burgundy text-cream px-6 py-3 rounded-full shadow-2xl text-xs font-medium z-50 transform -translate-y-20 opacity-0 transition-all duration-300 border border-gold flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-gold"></i>
+        <span id="toastMessage">Pesan berhasil disalin!</span>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const toParam = urlParams.get('to') || urlParams.get('u');
+            if (toParam) {
+                document.getElementById('guestName').innerText = toParam;
+            }
+        });
+
+        let audioCtx;
+        let isPlaying = false;
+        let musicTimer;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        const notes = [261.63, 329.63, 392.00, 493.88, 523.25, 659.25, 783.99];
+        let noteIndex = 0;
+
+        function playPianoNote() {
+            if (!isPlaying || !audioCtx) return;
+            
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                const freq = notes[noteIndex % notes.length];
+                noteIndex = Math.floor(Math.random() * notes.length);
+
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(0, audioCtx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 0.1);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.8);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 1.8);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function startMusic() {
+            initAudio();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            isPlaying = true;
+            document.getElementById('audioIcon').classList.remove('paused');
+            musicTimer = setInterval(playPianoNote, 600);
+        }
+
+        function stopMusic() {
+            isPlaying = false;
+            document.getElementById('audioIcon').classList.add('paused');
+            clearInterval(musicTimer);
+        }
+
+        function toggleAudio() {
+            if (isPlaying) {
+                stopMusic();
+            } else {
+                startMusic();
+            }
+        }
+
+        function openInvitation() {
+            const overlay = document.getElementById('coverOverlay');
+            overlay.style.transform = 'translateY(-100%)';
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 800);
+
+            document.getElementById('audioToggleBtn').classList.remove('hidden');
+            startMusic();
+            handleScrollReveal();
+        }
+
+        const targetDate = new Date('November 7, 2026 08:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('cd-days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('cd-hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('cd-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('cd-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            } else {
+                document.getElementById('cd-days').innerText = '00';
+                document.getElementById('cd-hours').innerText = '00';
+                document.getElementById('cd-minutes').innerText = '00';
+                document.getElementById('cd-seconds').innerText = '00';
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function copyToClipboard(text, bankName) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast(`Nomor Rekening ${bankName} (${text}) Berhasil Disalin!`);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('-translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('-translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        let wishCounter = 2;
+        function submitWish(event) {
+            event.preventDefault();
+            const name = document.getElementById('senderName').value;
+            const status = document.getElementById('attendance').value;
+            const msg = document.getElementById('wishMessage').value;
+
+            if (name && msg) {
+                wishCounter++;
+                document.getElementById('wishCount').innerText = wishCounter;
+
+                const container = document.getElementById('wishesContainer');
+                const newWish = document.createElement('div');
+                newWish.className = "vintage-box p-4 rounded-xl border border-rustic/20 text-xs space-y-1 transform transition-all duration-500 scale-95 opacity-0";
+                
+                newWish.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-burgundy">${escapeHtml(name)}</span>
+                        <span class="bg-rustic/20 text-rustic-dark px-2 py-0.5 rounded text-[10px]">${escapeHtml(status)}</span>
+                    </div>
+                    <p class="text-rustic-dark italic">"${escapeHtml(msg)}"</p>
+                `;
+
+                container.prepend(newWish);
+
+                setTimeout(() => {
+                    newWish.classList.remove('scale-95', 'opacity-0');
+                    newWish.classList.add('scale-100', 'opacity-100');
+                }, 50);
+
+                document.getElementById('wishForm').reset();
+                showToast('Doa & Ucapan Anda berhasil terkirim!');
+            }
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal-element');
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 80;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollReveal);
+    </script>
+</body>
+</html>
