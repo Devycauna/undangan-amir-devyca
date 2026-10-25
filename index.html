@@ -24,7 +24,8 @@
             'cream-paper': '#f4ece1',
             gold: '#d4af37',
             mocha: '#2b1d16',
-            blush: '#f7efe5'
+            blush: '#f7efe5',
+            champagne: '#f4e9d8'
           },
           fontFamily: {
             serif: ['Cinzel', 'serif'],
@@ -33,6 +34,7 @@
           },
           boxShadow: {
             luxe: '0 20px 50px rgba(74, 18, 31, 0.18)',
+            warm: '0 12px 32px rgba(107, 29, 47, 0.12)'
           }
         }
       }
@@ -52,9 +54,7 @@
       --cream: #f4ece1;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg-deep);
@@ -140,6 +140,42 @@
       width: 100%;
     }
 
+    .photo-frame {
+      background: linear-gradient(145deg, rgba(255,255,255,0.7), rgba(244,236,225,0.8));
+      border: 1px solid rgba(140,109,83,0.35);
+      box-shadow: 0 18px 35px rgba(74, 18, 31, 0.12);
+    }
+
+    .hero-photo {
+      background-image: linear-gradient(rgba(43,29,22,0.15), rgba(43,29,22,0.15)), url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .story-photo {
+      background-image: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-photo-1 {
+      background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-photo-2 {
+      background-image: url('https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=900&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-photo-3 {
+      background-image: url('https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=900&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #f4ece1; }
     ::-webkit-scrollbar-thumb {
@@ -149,12 +185,10 @@
   </style>
 </head>
 <body class="antialiased selection:bg-burgundy selection:text-white">
-  <!-- Floating Music Button -->
   <button id="audioToggleBtn" onclick="toggleAudio()" class="fixed bottom-6 right-6 z-50 hidden w-13 h-13 bg-burgundy text-cream rounded-full shadow-2xl border-2 border-gold cursor-pointer transition-transform duration-300 hover:scale-110">
     <i id="audioIcon" class="fa-solid fa-music text-lg music-btn paused"></i>
   </button>
 
-  <!-- Cover / Envelope -->
   <div id="coverOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-[#2b1d16] p-4">
     <div class="absolute top-0 left-0 p-4 opacity-70 pointer-events-none">
       <svg width="120" height="120" viewBox="0 0 100 100" fill="#6b1d2f">
@@ -195,10 +229,8 @@
     </div>
   </div>
 
-  <!-- Main Content -->
   <div id="mainContent" class="max-w-xl mx-auto min-h-screen rustic-bg shadow-2xl relative border-x border-rustic/20">
 
-    <!-- Hero -->
     <section class="min-h-screen flex flex-col items-center justify-between text-center p-8 py-16 relative overflow-hidden">
       <div class="w-full max-w-xs opacity-80">
         <svg viewBox="0 0 300 80" class="w-full">
@@ -209,10 +241,13 @@
         </svg>
       </div>
 
-      <div class="reveal-element my-auto space-y-4">
-        <p class="font-serif text-[11px] uppercase tracking-[0.42em] text-rustic">Walimatul 'Ursy</p>
-        <h2 class="font-cursive text-5xl sm:text-6xl text-burgundy leading-none">Amir & Devyca</h2>
-        <p class="font-serif text-sm text-rustic-dark tracking-[0.4em] uppercase">07 . 11 . 2026</p>
+      <div class="reveal-element my-auto space-y-6 w-full">
+        <div class="hero-photo rounded-[28px] overflow-hidden h-[360px] border-4 border-white shadow-luxe" aria-label="Wedding Couple Photo"></div>
+        <div class="space-y-4">
+          <p class="font-serif text-[11px] uppercase tracking-[0.42em] text-rustic">Walimatul 'Ursy</p>
+          <h2 class="font-cursive text-5xl sm:text-6xl text-burgundy leading-none">Amir & Devyca</h2>
+          <p class="font-serif text-sm text-rustic-dark tracking-[0.4em] uppercase">07 . 11 . 2026</p>
+        </div>
       </div>
 
       <div class="reveal-element animate-bounce text-rustic flex flex-col items-center gap-2">
@@ -221,7 +256,6 @@
       </div>
     </section>
 
-    <!-- Quote -->
     <section class="p-8 text-center relative border-t border-rustic/10">
       <div class="reveal-element vintage-box p-8 rounded-[26px] vintage-border relative">
         <i class="fa-solid fa-quote-left text-3xl text-burgundy/20 absolute top-4 left-4"></i>
@@ -237,7 +271,6 @@
       </div>
     </section>
 
-    <!-- Couple -->
     <section class="p-8 space-y-10">
       <div class="text-center reveal-element space-y-3">
         <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider">Mempelai Pria & Wanita</h3>
@@ -282,7 +315,31 @@
       </div>
     </section>
 
-    <!-- Countdown -->
+    <section class="p-8">
+      <div class="reveal-element vintage-box rounded-[28px] p-5 border border-rustic/30">
+        <div class="text-center mb-4">
+          <h3 class="font-serif text-xl text-burgundy uppercase tracking-[0.2em]">Our Story</h3>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="story-photo h-64 rounded-[24px] border border-rustic/20"></div>
+          <p class="text-sm leading-relaxed text-rustic-dark text-center italic">
+            "Bersama takdir yang menghubungkan hati kami, kami bersujud syukur atas kasih Tuhan yang menuntun langkah kami menuju hari yang penuh berkah ini."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-8">
+      <div class="text-center reveal-element mb-5">
+        <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider">Gallery</h3>
+      </div>
+      <div class="reveal-element grid grid-cols-2 gap-3">
+        <div class="gallery-photo-1 h-52 rounded-[24px] border border-rustic/20 photo-frame"></div>
+        <div class="gallery-photo-2 h-52 rounded-[24px] border border-rustic/20 photo-frame"></div>
+        <div class="gallery-photo-3 h-52 rounded-[24px] border border-rustic/20 photo-frame col-span-2"></div>
+      </div>
+    </section>
+
     <section class="p-8 text-center bg-burgundy text-cream relative">
       <div class="reveal-element space-y-6">
         <h3 class="font-serif text-xl sm:text-2xl uppercase tracking-[0.28em] text-gold font-semibold">Menghitung Hari</h3>
@@ -309,7 +366,6 @@
       </div>
     </section>
 
-    <!-- Event Details -->
     <section class="p-8 space-y-8">
       <div class="text-center reveal-element space-y-3">
         <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider">Rangkaian Acara</h3>
@@ -359,7 +415,6 @@
       </div>
     </section>
 
-    <!-- Gift -->
     <section class="p-8 space-y-6 border-t border-rustic/10">
       <div class="text-center reveal-element space-y-3">
         <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider">Amplop Digital</h3>
@@ -398,7 +453,6 @@
       </div>
     </section>
 
-    <!-- Guestbook -->
     <section class="p-8 space-y-6 border-t border-rustic/10">
       <div class="text-center reveal-element space-y-3">
         <h3 class="font-serif text-2xl text-burgundy font-bold uppercase tracking-wider">Doa & Ucapan</h3>
@@ -449,7 +503,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="p-8 text-center text-xs text-rustic space-y-2 border-t border-rustic/20 bg-cream-paper">
       <p class="font-cursive text-3xl text-burgundy">Amir & Devyca</p>
       <p class="text-[10px] uppercase tracking-[0.35em] text-rustic-dark">Terima Kasih Atas Doa & Restu Anda</p>
@@ -457,14 +510,12 @@
     </footer>
   </div>
 
-  <!-- Toast -->
   <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 bg-burgundy text-cream px-6 py-3 rounded-full shadow-2xl text-xs font-medium z-50 transform -translate-y-20 opacity-0 transition-all duration-300 border border-gold flex items-center gap-2">
     <i class="fa-solid fa-circle-check text-gold"></i>
     <span id="toastMessage">Pesan berhasil disalin!</span>
   </div>
 
   <script>
-    // Read guest name from URL: ?to=NamaTamu or ?u=NamaTamu
     window.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       const toParam = params.get('to') || params.get('u');
@@ -473,7 +524,6 @@
       }
     });
 
-    // Audio background melody
     let audioCtx;
     let isPlaying = false;
     let musicTimer;
@@ -484,30 +534,42 @@
       }
     }
 
-    const notes = [261.63, 329.63, 392.00, 493.88, 523.25, 659.25, 783.99];
-    let noteIndex = 0;
+    const romanticPianoChords = [
+      [261.63, 329.63, 392.00],
+      [293.66, 369.99, 440.00],
+      [329.63, 392.00, 493.88],
+      [349.23, 440.00, 523.25],
+      [392.00, 493.88, 587.33],
+      [329.63, 440.00, 523.25],
+      [293.66, 392.00, 493.88],
+      [261.63, 349.23, 440.00]
+    ];
 
-    function playPianoNote() {
+    let chordIndex = 0;
+
+    function playRomanticPianoChord() {
       if (!isPlaying || !audioCtx) return;
 
       try {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
+        const chord = romanticPianoChords[chordIndex % romanticPianoChords.length];
+        chordIndex++;
 
-        osc.type = 'sine';
-        const freq = notes[noteIndex % notes.length];
-        noteIndex = Math.floor(Math.random() * notes.length);
+        chord.forEach((freq, idx) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
 
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        gain.gain.setValueAtTime(0, audioCtx.currentTime);
-        gain.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 0.1);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.8);
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.04);
 
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
+          gain.gain.setValueAtTime(0, audioCtx.currentTime + idx * 0.04);
+          gain.gain.linearRampToValueAtTime(0.06, audioCtx.currentTime + idx * 0.04 + 0.12);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + idx * 0.04 + 1.8);
 
-        osc.start();
-        osc.stop(audioCtx.currentTime + 1.8);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(audioCtx.currentTime + idx * 0.04);
+          osc.stop(audioCtx.currentTime + idx * 0.04 + 1.8);
+        });
       } catch (e) {
         console.log(e);
       }
@@ -520,7 +582,7 @@
       }
       isPlaying = true;
       document.getElementById('audioIcon').classList.remove('paused');
-      musicTimer = setInterval(playPianoNote, 600);
+      musicTimer = setInterval(playRomanticPianoChord, 1500);
     }
 
     function stopMusic() {
@@ -550,7 +612,6 @@
       handleScrollReveal();
     }
 
-    // Countdown
     const targetDate = new Date('November 7, 2026 08:00:00').getTime();
 
     function updateCountdown() {
@@ -578,7 +639,6 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Copy to clipboard
     function copyToClipboard(text, bankName) {
       const tempInput = document.createElement('input');
       tempInput.value = text;
@@ -612,7 +672,6 @@
       }, 2800);
     }
 
-    // Guestbook
     let wishCounter = 2;
     function submitWish(event) {
       event.preventDefault();
