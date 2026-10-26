@@ -146,6 +146,25 @@
       box-shadow: 0 18px 35px rgba(74, 18, 31, 0.12);
     }
 
+    .profile-photo-frame {
+      width: 96px;
+      height: 96px;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      border: 2px solid rgba(140, 109, 83, 0.9);
+      background: linear-gradient(135deg, rgba(107, 29, 47, 0.08), rgba(140, 109, 83, 0.12));
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,0.7), 0 12px 24px rgba(74, 18, 31, 0.12);
+    }
+
+    .profile-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
     .hero-photo {
       background-image: linear-gradient(rgba(43,29,22,0.15), rgba(43,29,22,0.15)), url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80');
       background-size: cover;
@@ -185,7 +204,7 @@
   </style>
 </head>
 <body class="antialiased selection:bg-burgundy selection:text-white">
-  <button id="audioToggleBtn" onclick="toggleAudio()" class="fixed bottom-6 right-6 z-50 hidden w-13 h-13 bg-burgundy text-cream rounded-full shadow-2xl border-2 border-gold cursor-pointer transition-transform duration-300 hover:scale-110">
+  <button id="audioToggleBtn" onclick="toggleAudio()" class="fixed bottom-6 right-6 z-50 hidden w-13 h-13 bg-burgundy text-cream rounded-full shadow-2xl border-2 border-gold cursor-pointer transition-all duration-300 hover:scale-105">
     <i id="audioIcon" class="fa-solid fa-music text-lg music-btn paused"></i>
   </button>
 
@@ -222,7 +241,7 @@
         <p class="text-[11px] text-rustic-dark italic mt-1">Di Tempat</p>
       </div>
 
-      <button onclick="openInvitation()" class="w-full py-3.5 px-6 bg-burgundy hover:bg-burgundy-dark text-cream font-medium rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 border border-gold group">
+      <button onclick="openInvitation()" class="w-full py-3.5 px-6 bg-burgundy hover:bg-burgundy-dark text-cream font-medium rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 group">
         <i class="fa-solid fa-envelope-open transition-transform group-hover:scale-110"></i>
         <span class="tracking-[0.18em] text-xs uppercase">Buka Undangan</span>
       </button>
@@ -262,10 +281,10 @@
         <i class="fa-solid fa-quote-right text-3xl text-burgundy/20 absolute bottom-4 right-4"></i>
 
         <p class="font-serif text-[22px] sm:text-[28px] text-burgundy mb-5 leading-relaxed dir-rtl" style="font-family: 'Amiri', serif;">
-          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
         </p>
         <p class="text-xs sm:text-sm text-rustic-dark italic leading-relaxed mb-4">
-          "Dan di antara tanda-tanda (kebesaran-Nya) ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+          "Dan di antara tanda-tanda (kebesaran-Nya) ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda kebesaran Allah bagi kaum yang berpikir."
         </p>
         <span class="font-serif font-semibold text-[11px] text-burgundy tracking-[0.3em] uppercase block">— QS. Ar-Rum: 21</span>
       </div>
@@ -279,10 +298,8 @@
       </div>
 
       <div class="reveal-element vintage-box p-6 rounded-[28px] border border-rustic/30 text-center relative overflow-hidden">
-        <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-rustic-dark/10 border-2 border-rustic flex items-center justify-center text-burgundy shadow-inner">
-          <svg class="w-14 h-14 fill-current text-burgundy" viewBox="0 0 24 24">
-            <path d="M12,2A3,3 0 0,1 15,5V7H9V5A3,3 0 0,1 12,2M6,8H18A2,2 0 0,1 20,10V21A1,1 0 0,1 19,22H5A1,1 0 0,1 4,21V10A2,2 0 0,1 6,8M12,9L9.5,13.5L12,14.5L14.5,13.5L12,9M12,16L10,20H14L12,16Z"/>
-          </svg>
+        <div class="profile-photo-frame">
+          <img src="./assets/amir.jpg" alt="Ahmad Amirulloh" />
         </div>
         <h4 class="font-serif text-xl font-bold text-burgundy mb-1">Ahmad Amirulloh</h4>
         <p class="text-sm font-semibold text-rustic mb-3">( Amir )</p>
@@ -299,10 +316,8 @@
       </div>
 
       <div class="reveal-element vintage-box p-6 rounded-[28px] border border-rustic/30 text-center relative overflow-hidden">
-        <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-burgundy/10 border-2 border-rustic flex items-center justify-center text-burgundy shadow-inner">
-          <svg class="w-14 h-14 fill-current text-burgundy" viewBox="0 0 24 24">
-            <path d="M12,2L9,7H15L12,2M8,8L4,21H20L16,8H8M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10Z"/>
-          </svg>
+        <div class="profile-photo-frame">
+          <img src="./assets/devyca.jpg" alt="Devyca Aurel Nabila Kautsar" />
         </div>
         <h4 class="font-serif text-xl font-bold text-burgundy mb-1">Devyca Aurel Nabila Kautsar</h4>
         <p class="text-sm font-semibold text-rustic mb-3">( Devyca )</p>
@@ -400,12 +415,12 @@
       </div>
 
       <div class="reveal-element text-center space-y-4 pt-2">
-        <a href="https://maps.app.goo.gl/DGwh3BAMGpE4SM2R8?g_st=ic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-burgundy hover:bg-burgundy-dark text-cream rounded-2xl shadow-md transition-all font-medium text-sm border border-gold">
+        <a href="https://maps.app.goo.gl/DGwh3BAMGpE4SM2R8?g_st=ic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-burgundy hover:bg-burgundy-dark text-cream rounded-2xl shadow-lg transition-all duration-300">
           <i class="fa-solid fa-map-location-dot text-lg text-gold"></i>
           <span>Buka Peta Lokasi (Google Maps)</span>
         </a>
         <div class="flex gap-2">
-          <a href="https://wa.me/?text=Yuk%20hadiri%20pernikahan%20Amir%20%26%20Devyca%20pada%20Sabtu%2C%2007%20November%202026%20%F0%9F%92%97%0Ahttps%3A%2F%2Fdevycauna.github.io%2Fundangan-amir-devyca%2F" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl text-xs font-semibold uppercase tracking-wider">
+          <a href="https://wa.me/?text=Yuk%20hadiri%20pernikahan%20Amir%20%26%20Devyca%20pada%20Sabtu%2C%2007%20November%202026%20%F0%9F%92%97%0Ahttps%3A%2F%2Fdevycauna.github.io%2Fundangan-amir-devyca%2F" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] text-white rounded-2xl text-xs font-semibold uppercase tracking-wider">
             <i class="fa-brands fa-whatsapp"></i> Share WA
           </a>
           <button onclick="copyShareLink()" class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-rustic text-white rounded-2xl text-xs font-semibold uppercase tracking-wider">
@@ -475,7 +490,7 @@
         </div>
         <div>
           <label class="block text-[10px] font-semibold text-rustic-dark uppercase tracking-[0.2em] mb-2">Doa & Ucapan</label>
-          <textarea id="wishMessage" rows="3" required placeholder="Tuliskan ucapan selamat & doa..." class="w-full text-xs p-3 rounded-xl border border-rustic/30 bg-cream focus:outline-none focus:border-burgundy"></textarea>
+          <textarea id="wishMessage" rows="3" required placeholder="Tuliskan ucapan selamat & doa..." class="w-full text-xs p-3 rounded-xl border border-rustic/30 bg-cream focus:outline-none focus:border-burgundy resize-none"></textarea>
         </div>
         <button type="submit" class="w-full py-3 bg-burgundy hover:bg-burgundy-dark text-cream text-[10px] font-semibold uppercase tracking-[0.2em] rounded-xl transition-all shadow-md">
           Kirim Ucapan
@@ -510,7 +525,7 @@
     </footer>
   </div>
 
-  <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 bg-burgundy text-cream px-6 py-3 rounded-full shadow-2xl text-xs font-medium z-50 transform -translate-y-20 opacity-0 transition-all duration-300 border border-gold flex items-center gap-2">
+  <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 bg-burgundy text-cream px-6 py-3 rounded-full shadow-2xl text-xs font-medium z-50 transform -translate-y-20 opacity-0 transition-all duration-500">
     <i class="fa-solid fa-circle-check text-gold"></i>
     <span id="toastMessage">Pesan berhasil disalin!</span>
   </div>
